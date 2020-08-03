@@ -1,0 +1,42 @@
+# -*- mode: ini; tab-width: 4; indent-tabs-mode: nil -*-
+[image]
+size = 1G
+fs_type = ext4
+
+[bootstrap]
+multistrap-config = [Debian]
+    packages=
+    source=http://ftp.debian.org/debian
+    keyring=debian-archive-keyring
+    suite=stable
+    
+    [Debian-Security]
+    packages=
+    source=http://security.debian.org
+    keyring=debian-archive-keyring
+    suite=stable/updates
+    
+    [General]
+    arch=armhf
+    cleanup=true
+    bootstrap=Debian
+    aptsources=Debian Debian-Security
+    
+init-script = /etc/init.sh
+init-script-template = builtin:data/init.sh
+embedded-config = /etc/android-debian-builder.config
+extra-gpg-keys =
+
+[extra-scripts]
+/first-time-setup.sh = builtin:data/first-time-setup.sh
+
+[launcher]
+image-path = /sdcard/debian.img
+mount-point = /data/local/debian
+template = builtin:data/deb.sh
+
+[bind-mounts]
+/proc = /proc
+/sys = /sys
+/dev = /dev
+/dev/pts = /dev/pts

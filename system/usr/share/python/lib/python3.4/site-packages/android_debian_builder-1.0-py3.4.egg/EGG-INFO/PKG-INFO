@@ -1,0 +1,68 @@
+Metadata-Version: 1.1
+Name: android-debian-builder
+Version: 1.0
+Summary: Bootstrap a Debian system in a file, mostly for deploying to Android.
+Home-page: https://bitbucket.org/fk/android-debian-builder
+Author: Felix Krull
+Author-email: f_krull@gmx.de
+License: MIT
+Description: =============================================================
+        android-debian-builder -- bootstrap a Debian system in a file
+        =============================================================
+        
+        This tool uses Multistrap_ to bootstrap a Debian (or Debian-based) system into
+        an image file as well as adding an Android-targeted launcher script to chroot
+        into the system.
+        
+        Installation
+        ============
+        Requirements on the host system:
+        
+        * Python_ 3.3 or up
+        * Jinja_ 2.7 or up
+        * Multistrap_
+        * because of Multistrap: a Debian_ (or Debian-based) system
+        
+        Requirements on the target device:
+        
+        * root access
+        * Busybox (this might be pre-installed on your system or you could use one of
+          the various installers on the Play Store)
+        * a kernel that supports loop mounts and whatever file system you wish to use
+        
+        Installation with *pip*::
+        
+            # pip3 install android-debian-builder
+        
+        Installation from the source tarball::
+        
+            # python3 setup.py install
+        
+        Usage
+        =====
+        Simply running ``android-debian-builder`` (as root) will start building a Debian
+        image in the current directory. To see possible command line options, run
+        ``android-debian-builder --help``. Usually, you'll want to customise the
+        configuration; the easiest way is to dump the default configuration with
+        ``android-debian-builder --print-config`` and build your own based on that.
+        
+        Additional example configurations are included. These can be found in
+        ``android_debian_builder/examples`` in the source distribution or in the
+        ``examples` subdirectory of the installed package. To include one of these
+        examples in your configuration setup, prefix the file name with
+        ``builtin:examples/`` on the command line, like so::
+        
+            # android-debian-builder --config builtin:examples/jessie-armhf.cfg
+        
+        .. _Multistrap: https://wiki.debian.org/Multistrap
+        .. _Python: https://python.org
+        .. _Jinja: http://jinja.pocoo.org/
+        .. _Debian: https://debian.org
+        
+Platform: Debian
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Android
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: System :: Installation/Setup

@@ -1,0 +1,10 @@
+#!/android/wd/Python-3.4.2/python3.4.2/bin/python3
+# EASY-INSTALL-ENTRY-SCRIPT: 'android-debian-builder==1.0','console_scripts','android-debian-builder'
+__requires__ = 'android-debian-builder==1.0'
+import sys
+from pkg_resources import load_entry_point
+
+if __name__ == '__main__':
+    sys.exit(
+        load_entry_point('android-debian-builder==1.0', 'console_scripts', 'android-debian-builder')()
+    )

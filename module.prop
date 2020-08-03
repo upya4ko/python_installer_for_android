@@ -1,0 +1,6 @@
+id=python_installer
+name=Python 3.4.2 Installer
+version=Ver: 1
+versionCode=1
+author=7175, McPcholkin
+description=Install python3.4.2 to /system/usr/share/python
