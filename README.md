@@ -1,6 +1,6 @@
 # Python installer for magisk
 
-Simple module to put all python power to android console!
+Simple module to put all python 3.4.2 power to android console!
 
 Thanks **7175** for [python binary](https://dl.xda-cdn.com/3/0/6/4/4/2/0/python3.4.2_noedify_installer.zip?key=J9QDIO1eV-xKg59TK_U4dA&ts=1596144425) (i just make magisk module).
 
