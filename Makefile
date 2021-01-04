@@ -1,14 +1,14 @@
-make_magisk_module: 
-	zip -r python_installer_for_android.zip \
-	META-INF \
-    LICENSE \
-	README.md \
-	module.prop \
-	customize.sh \
-	system
+magiskModuleName = $(shell basename `pwd`)
 
-push:
-	adb push python_installer_for_android.zip /sdcard/
+all: clean make-magisk-module adb-push
+.PHONY: all
+
+make-magisk-module: 
+	zip -r ${magiskModuleName}.zip ./* --exclude .gitignore Makefile \*.zip .git/
+
+adb-push:
+	adb push ${magiskModuleName}.zip /sdcard/magiskModules/
 
 clean: 
-	rm python_installer_for_android.zip
+	rm ${magiskModuleName}.zip
+
