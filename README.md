@@ -4,6 +4,7 @@
 
 **Glory to Ukraine!**
 
+```ASCII
            @@@           
 @@         @@@         @@
 @@@@       @@@       @@@@
@@ -24,7 +25,7 @@
        @@@@@@@@@@@       
         @@@@@@@@@        
           @@@@@          
-
+```
 ---
 
 Simple module to put all python 3.4.2 power to android console!
